@@ -1,0 +1,14 @@
+body {
+    background-image: linear-gradient(to left, #341C1C, #49393B);
+    height: 100%;
+    padding-top: 3rem;
+}
+
+.container { 
+    background-image: linear-gradient(to left, #4B644A, #89A894);
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    margin: auto;
+    height: 38rem;
+}
