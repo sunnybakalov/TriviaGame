@@ -1,3 +1,4 @@
+$(document).ready(function () {
 //variables needed:
 //object needed for the answer to each question.
 var answer = {
@@ -23,6 +24,8 @@ var answer = {
     },
 }
 
+
+
 //variable for the user's choice(click)
 //variable for correct choices
 
@@ -32,3 +35,4 @@ var answer = {
 
 //there needs to be a 30 second countdown function that can be applied to each slide
 
+}
