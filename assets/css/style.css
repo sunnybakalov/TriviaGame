@@ -21,7 +21,7 @@ button {
 }
 
 .container { 
-    background-image: linear-gradient(to left, #4B644A, #89A894);
+    /* background-image: linear-gradient(to left, #4B644A, #89A894); */
     /* display: flex;
     justify-content: center; */
     padding: 5px;

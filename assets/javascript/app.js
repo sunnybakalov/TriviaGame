@@ -53,7 +53,8 @@ var startBtn = $("#startBtn");
 //function that starts the game when you click the Start Button
 $("#startBtn").click(function(){
     if (isGameStarted === false) {
-        isGameStarted = true
+        isGameStarted = true;
+        timer.show();
         question.show();
         choice1.show();
         choice2.show();
