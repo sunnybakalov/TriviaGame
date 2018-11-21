@@ -11,6 +11,13 @@ h1,
     align-content: center;
 }
 
+#timer,
+#question,
+button {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
 .container { 
     background-image: linear-gradient(to left, #4B644A, #89A894);
     /* display: flex;

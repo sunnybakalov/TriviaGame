@@ -1,41 +1,45 @@
 $(document).ready(function () {
-//variables needed:
+
 //object needed for the answer to each question.
 var answer = {
-    russell: {
-        name: "Bill Russell",
-        fact: "Russell won 11 championships with the Boston Celtics during his 13 year long playing career.",
-        image: '/images/russell.jpg'
+    question1: {
+        question: "Which of these players has won the most championships?",
+        choices: ["Michael Jordan", "Kobe Bryant", "Bill Russell", "Kevin Durant"],
+        answer: 2
     },
-    shaq: {
-        name: "Shaquille O'Neal",
-        fact: "Shaq only made 1 three point shot in his entire career!",
-        image: '/images/shaq.jpg'
+    question2: {
+        question: "Which of these players has only made one 3 point shot in their entire career?",
+        choices: ["Kemba Walker", "Shaquille O'Neal", "Klay Thompson", "Rudy Gobert"],
+        answer: 1
     },
-    nuggets: {
-        name: "Denver Nuggets",
-        fact: "The Nuggets are 1 of 13 NBA teams that have not won an NBA championship.",
-        image: '/images/nuggets.jpg'
+    question3: {
+        question: "Which team has never won an NBA championship?",
+        choices: ["Cleveland Cavaliers", "Detroit Pistons", "Denver Nuggets", "New York Knicks"],
+        answer: 2
     },
-    wilt: {
-        name: "Wilt Chamberlain",
-        fact: "Wilt Chamberlain had a total of 32 60-point games. The #2 spot for the most 60 point games goes to Kobe Bryant with 6 games.",
-        image: '/images/wilt.jpg'
+    question4: {
+        question: "Which of these players has the most 60 point games?",
+        choices: ["Kareem Abdul Jabbar", "Kobe Bryant", "Wilt Chamberlain", "Larry Bird"],
+        answer: 2
+    },
+    question5: {
+        question: "Who is the only player to ever average a triple double in more than 1 season?",
+        choices: ["Oscar Robertson", "Derrick Rose", "Magic Johnson", "Russell Westbrook"],
+        answer: 3
     }
 }
 
-
-//question:
-//choices:
-//answer:
-
-
-//variable for the user's choice(click)
-//variable for correct choices
-
+//variable for beginning score
 var score = 0;
 
+//variables 
+var question = $("#question");
+var choice1 = $("#answer1");
+var choice2 = $("#answer2");
+var choice3 = $("#answer3");
+var choice4 = $("#answer4");
 
+//variable for the user's choice(click)
 
 //slides
 //need to have an on click function for the answer that the user chooses on each slide
