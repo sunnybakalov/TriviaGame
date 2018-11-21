@@ -21,13 +21,21 @@ var answer = {
         name: "Wilt Chamberlain",
         fact: "Wilt Chamberlain had a total of 32 60-point games. The #2 spot for the most 60 point games goes to Kobe Bryant with 6 games.",
         image: '/images/wilt.jpg'
-    },
+    }
 }
 
+
+//question:
+//choices:
+//answer:
 
 
 //variable for the user's choice(click)
 //variable for correct choices
+
+var score = 0;
+
+
 
 //slides
 //need to have an on click function for the answer that the user chooses on each slide
