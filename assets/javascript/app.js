@@ -26,6 +26,11 @@ var answer = {
         question: "Who is the only player to ever average a triple double in more than 1 season?",
         choices: ["Oscar Robertson", "Derrick Rose", "Magic Johnson", "Russell Westbrook"],
         answer: 3
+    },
+    question6: {
+        question: "Which player has the most missed shots in NBA history?",
+        choices: ["Lebron James", "JR Smith", "Draymond Green", "Kobe Bryant"],
+        answer: 3
     }
 }
 

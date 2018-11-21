@@ -28,4 +28,14 @@ Your basketball knowledge will be tested in this trivia game.
     //Wilt Chamberlain*
     //Larry Bird
 
-//
+//Who is the only player to ever average a triple double in more than 1 season?
+    //Oscar Robertson
+    //Derrick Rose
+    //Magic Johnson
+    //Russell Westbrook*
+
+//Which player has the most missed shots in NBA history?
+    //Lebron James
+    //JR Smith
+    //Draymond Green
+    //Kobe Bryant*
