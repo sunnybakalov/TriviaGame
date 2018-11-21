@@ -1,5 +1,5 @@
 body {
-    background-image: url("/assets/images/lebron.jpg");
+    background: url("../images/lebron.jpg");
     height: 100%;
     padding-top: 3rem;
 }
