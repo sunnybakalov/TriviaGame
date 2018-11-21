@@ -28,3 +28,20 @@ button {
     margin: auto;
     height: 38rem;
 }
+
+#answer1,
+#answer2,
+#answer3,
+#answer4,
+#question,
+#timer {
+    display: none;
+}
+
+#startBtn {
+    display: flex;
+    margin: auto;
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+}

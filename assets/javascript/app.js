@@ -38,13 +38,30 @@ var answer = {
 var score = 0;
 
 //variables 
+var timer = $("#timer");
 var question = $("#question");
 var choice1 = $("#answer1");
 var choice2 = $("#answer2");
 var choice3 = $("#answer3");
 var choice4 = $("#answer4");
 
-//variable for the user's choice(click)
+var isGameStarted = false;
+
+//start button
+var startBtn = $("#startBtn");
+
+//function that starts the game when you click the Start Button
+$("#startBtn").click(function(){
+    if (isGameStarted === false) {
+        isGameStarted = true
+        question.show();
+        choice1.show();
+        choice2.show();
+        choice3.show();
+        choice4.show();
+        startBtn.hide();
+    }
+});
 
 //slides
 //need to have an on click function for the answer that the user chooses on each slide
@@ -52,4 +69,4 @@ var choice4 = $("#answer4");
 
 //there needs to be a 30 second countdown function that can be applied to each slide
 
-}
+});
