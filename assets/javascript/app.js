@@ -57,6 +57,11 @@ $(document).ready(function() {
       question: "Which player has the most missed shots in NBA history?",
       choices: ["Lebron James", "JR Smith", "Draymond Green", "Kobe Bryant"],
       answer: 3
+    },
+    question7: {
+        question: "Who is the youngest player to ever win the MVP award?",
+        choices: ["Derrick Rose", "LeBron James", "Michael Jordan", "Kobe Bryant"],
+        answer: 0
     }
   };
 
