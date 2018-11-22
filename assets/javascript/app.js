@@ -62,6 +62,21 @@ $(document).ready(function() {
         question: "Who is the youngest player to ever win the MVP award?",
         choices: ["Derrick Rose", "LeBron James", "Michael Jordan", "Kobe Bryant"],
         answer: 0
+    },
+    question8: {
+        question: "",
+        choices: ["", "", "", ""],
+        answer:
+    },
+    question9: {
+        question: "",
+        choices: ["", "", "", ""],
+        answer:
+    }
+    question10: {
+        question: "",
+        choices: ["", "", "", ""],
+        answer:
     }
   };
 
