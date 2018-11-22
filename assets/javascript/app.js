@@ -75,7 +75,7 @@ $(document).ready(function() {
   var intervalId;
 
   //timer seconds variable.
-  var seconds = 30;
+  var seconds = 21;
 
   function run() {
     clearInterval(intervalId);
@@ -86,7 +86,7 @@ $(document).ready(function() {
   function decrement() {
     //decrease timer by 1
     seconds--;
-    $("#timer").html(seconds + "seconds remaining");
+    $("#timer").html(seconds + " seconds remaining");
     if (seconds === 0) {
       stop();
       //THIS IS WHERE THE CORRECT ANSWER NEEDS TO BE DISPLAYED
@@ -116,6 +116,10 @@ $(document).ready(function() {
       startBtn.hide();
       run();
       decrement();
+
+        if (seconds >= 1) {
+        console.log("the game is still going");
+        }
     }
   });
 
