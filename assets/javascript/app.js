@@ -1,7 +1,7 @@
 $(document).ready(function() {
   //object needed for the answer to each question.
-  var answer = {
-    question1: {
+  var answer = [
+    {
       question: "Which of these players has won the most championships?",
       choices: [
         "Michael Jordan",
@@ -11,7 +11,7 @@ $(document).ready(function() {
       ],
       answer: 2
     },
-    question2: {
+    {
       question:
         "Which of these players has only made one 3 point shot in their entire career?",
       choices: [
@@ -22,7 +22,7 @@ $(document).ready(function() {
       ],
       answer: 1
     },
-    question3: {
+    {
       question: "Which team has never won an NBA championship?",
       choices: [
         "Cleveland Cavaliers",
@@ -32,7 +32,7 @@ $(document).ready(function() {
       ],
       answer: 2
     },
-    question4: {
+    {
       question: "Which of these players has the most 60 point games?",
       choices: [
         "Kareem Abdul Jabbar",
@@ -42,7 +42,7 @@ $(document).ready(function() {
       ],
       answer: 2
     },
-    question5: {
+    {
       question:
         "Who is the only player to ever average a triple double in more than 1 season?",
       choices: [
@@ -53,35 +53,53 @@ $(document).ready(function() {
       ],
       answer: 3
     },
-    question6: {
+    {
       question: "Which player has the most missed shots in NBA history?",
       choices: ["Lebron James", "JR Smith", "Draymond Green", "Kobe Bryant"],
       answer: 3
     },
-    question7: {
-        question: "Who is the youngest player to ever win the MVP award?",
-        choices: ["Derrick Rose", "LeBron James", "Michael Jordan", "Kobe Bryant"],
-        answer: 0
+    {
+      question: "Who is the youngest player to ever win the MVP award?",
+      choices: [
+        "Derrick Rose",
+        "LeBron James",
+        "Michael Jordan",
+        "Kobe Bryant"
+      ],
+      answer: 0
     },
-    question8: {
-        question: "How long is a regulation NBA game",
-        choices: ["40 minutes", "35 minutes", "48 minutes", "60 minutes"],
-        answer: 2
+    {
+      question: "How long is a regulation NBA game",
+      choices: ["40 minutes", "35 minutes", "48 minutes", "60 minutes"],
+      answer: 2
     },
-    question9: {
-        question: "What player was the inspiration behind the NBA logo?",
-        choices: ["Jerry West", "Hakeem Olajuwon", "Elgin Baylor", "Michael Jordan"],
-        answer: 0
+    {
+      question: "What player was the inspiration behind the NBA logo?",
+      choices: [
+        "Jerry West",
+        "Hakeem Olajuwon",
+        "Elgin Baylor",
+        "Michael Jordan"
+      ],
+      answer: 0
     },
-    question10: {
-        question: "Who was the first foreign-born NBA player to become league MVP?",
-        choices: ["Toni Kukoc", "Dirk Nowitzki", "Pau Gasol", "Kristaps Porzingis"],
-        answer: 1
+    {
+      question:
+        "Who was the first foreign-born NBA player to become league MVP?",
+      choices: [
+        "Toni Kukoc",
+        "Dirk Nowitzki",
+        "Pau Gasol",
+        "Kristaps Porzingis"
+      ],
+      answer: 1
     }
-  };
+];
 
   //variable for beginning score
   var score = 0;
+
+  var number = 0;
 
   //variables
   var timer = $("#timer");
@@ -91,24 +109,30 @@ $(document).ready(function() {
   var choice3 = $("#answer3");
   var choice4 = $("#answer4");
 
+  //start button
+  var startBtn = $("#startBtn");
+
   //variable that will hold our interval ID when we execute
   var intervalId;
 
   //timer seconds variable.
   var seconds = 21;
 
+  var isGameStarted = false;
+
   function run() {
     clearInterval(intervalId);
     intervalId = setInterval(decrement, 1000);
   }
 
-  //decrement
+  //the function that counts down
   function decrement() {
     //decrease timer by 1
     seconds--;
     $("#timer").html(seconds + " seconds remaining");
     if (seconds === 0) {
       stop();
+      alert("time is up!");
       //THIS IS WHERE THE CORRECT ANSWER NEEDS TO BE DISPLAYED
     }
   }
@@ -118,10 +142,17 @@ $(document).ready(function() {
     clearInterval(intervalId);
   }
 
-  var isGameStarted = false;
+  //the function that populates the current question and the answer choices on the screen
 
-  //start button
-  var startBtn = $("#startBtn");
+  function populate() {
+    question.text(answer[0].question);
+    choice1.text(answer[0].choices[0]);
+    choice2.text(answer[0].choices[1]);
+    choice3.text(answer[0].choices[2]);
+    choice4.text(answer[0].choices[3]);
+  }
+
+
 
   //function that starts the game when you click the Start Button
   $("#startBtn").click(function() {
@@ -136,10 +167,11 @@ $(document).ready(function() {
       startBtn.hide();
       run();
       decrement();
+      populate();
 
-        if (seconds >= 1) {
+      if (seconds >= 1) {
         console.log("the game is still going");
-        }
+      }
     }
   });
 
