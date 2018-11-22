@@ -9,7 +9,7 @@ $(document).ready(function() {
         "Bill Russell",
         "Kevin Durant"
       ],
-      answer: 2
+      answerIndex: 2
     },
     {
       question:
@@ -20,7 +20,7 @@ $(document).ready(function() {
         "Klay Thompson",
         "Rudy Gobert"
       ],
-      answer: 1
+      answerIndex: 1
     },
     {
       question: "Which team has never won an NBA championship?",
@@ -30,7 +30,7 @@ $(document).ready(function() {
         "Denver Nuggets",
         "New York Knicks"
       ],
-      answer: 2
+      answerIndex: 2
     },
     {
       question: "Which of these players has the most 60 point games?",
@@ -40,7 +40,7 @@ $(document).ready(function() {
         "Wilt Chamberlain",
         "Larry Bird"
       ],
-      answer: 2
+      answerIndex: 2
     },
     {
       question:
@@ -51,12 +51,12 @@ $(document).ready(function() {
         "Magic Johnson",
         "Russell Westbrook"
       ],
-      answer: 3
+      answerIndex: 3
     },
     {
       question: "Which player has the most missed shots in NBA history?",
       choices: ["Lebron James", "JR Smith", "Draymond Green", "Kobe Bryant"],
-      answer: 3
+      answerIndex: 3
     },
     {
       question: "Who is the youngest player to ever win the MVP award?",
@@ -66,12 +66,12 @@ $(document).ready(function() {
         "Michael Jordan",
         "Kobe Bryant"
       ],
-      answer: 0
+      answerIndex: 0
     },
     {
       question: "How long is a regulation NBA game",
       choices: ["40 minutes", "35 minutes", "48 minutes", "60 minutes"],
-      answer: 2
+      answerIndex: 2
     },
     {
       question: "What player was the inspiration behind the NBA logo?",
@@ -81,7 +81,7 @@ $(document).ready(function() {
         "Elgin Baylor",
         "Michael Jordan"
       ],
-      answer: 0
+      answerIndex: 0
     },
     {
       question:
@@ -92,12 +92,14 @@ $(document).ready(function() {
         "Pau Gasol",
         "Kristaps Porzingis"
       ],
-      answer: 1
+      answerIndex: 1
     }
 ];
 
   //variable for beginning score
   var score = 0;
+
+  var wrong = 0;
 
   var number = 0;
 
@@ -120,6 +122,7 @@ $(document).ready(function() {
 
   var isGameStarted = false;
 
+  //the function that keeps the timer running
   function run() {
     clearInterval(intervalId);
     intervalId = setInterval(decrement, 1000);
@@ -133,6 +136,7 @@ $(document).ready(function() {
     if (seconds === 0) {
       stop();
       alert("time is up!");
+      wrong++;
       //THIS IS WHERE THE CORRECT ANSWER NEEDS TO BE DISPLAYED
     }
   }
@@ -140,6 +144,15 @@ $(document).ready(function() {
   //the stop function that clears our intervalId
   function stop() {
     clearInterval(intervalId);
+  }
+
+  function displayResult() {
+    timer.hide();
+    question.hide();
+    choice1.hide();
+    choice2.hide();
+    choice3.hide();
+    choice4.hide();
   }
 
   //the function that populates the current question and the answer choices on the screen
@@ -171,7 +184,11 @@ $(document).ready(function() {
 
       if (seconds >= 1) {
         console.log("the game is still going");
+        // if ()
       }
+    }
+    if($(".btn").click() === answer[i].answerIndex) {
+        score++;
     }
   });
 
