@@ -64,19 +64,19 @@ $(document).ready(function() {
         answer: 0
     },
     question8: {
-        question: "",
-        choices: ["", "", "", ""],
-        answer:
+        question: "How long is a regulation NBA game",
+        choices: ["40 minutes", "35 minutes", "48 minutes", "60 minutes"],
+        answer: 2
     },
     question9: {
-        question: "",
-        choices: ["", "", "", ""],
-        answer:
-    }
+        question: "What player was the inspiration behind the NBA logo?",
+        choices: ["Jerry West", "Hakeem Olajuwon", "Elgin Baylor", "Michael Jordan"],
+        answer: 0
+    },
     question10: {
-        question: "",
-        choices: ["", "", "", ""],
-        answer:
+        question: "Who was the first foreign-born NBA player to become league MVP?",
+        choices: ["Toni Kukoc", "Dirk Nowitzki", "Pau Gasol", "Kristaps Porzingis"],
+        answer: 1
     }
   };
 
