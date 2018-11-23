@@ -99,6 +99,7 @@ $(document).ready(function() {
   //variable for beginning score
   var score = 0;
 
+  //variable for wrong guesses
   var wrong = 0;
 
   var number = 0;
