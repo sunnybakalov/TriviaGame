@@ -125,6 +125,7 @@ $(document).ready(function() {
 
   //the function that keeps the timer running
   function run() {
+    seconds = 21;
     clearInterval(intervalId);
     intervalId = setInterval(decrement, 1000);
   }
@@ -132,18 +133,21 @@ $(document).ready(function() {
   //the function that counts down
   function decrement() {
     //decrease timer by 1
-    seconds--;
+    --seconds;
     $("#timer").html(seconds + " seconds remaining");
-    if (seconds === 0) {
+    if (seconds <= 0) {
       stop();
       alert("time is up!");
       wrong++;
-      //THIS IS WHERE THE CORRECT ANSWER NEEDS TO BE DISPLAYED
+      ++number;
+      populate();
+      run();
     }
   }
 
   //the stop function that clears our intervalId
   function stop() {
+    seconds = 21;
     clearInterval(intervalId);
   }
 
@@ -159,11 +163,11 @@ $(document).ready(function() {
   //the function that populates the current question and the answer choices on the screen
 
   function populate() {
-    question.text(answer[0].question);
-    choice1.text(answer[0].choices[0]);
-    choice2.text(answer[0].choices[1]);
-    choice3.text(answer[0].choices[2]);
-    choice4.text(answer[0].choices[3]);
+    question.text(answer[number].question);
+    choice1.text(answer[number].choices[0]);
+    choice2.text(answer[number].choices[1]);
+    choice3.text(answer[number].choices[2]);
+    choice4.text(answer[number].choices[3]);
   }
 
 
@@ -180,7 +184,7 @@ $(document).ready(function() {
       choice4.show();
       startBtn.hide();
       run();
-      decrement();
+    //decrement();
       populate();
 
       if (seconds >= 1) {
@@ -188,10 +192,19 @@ $(document).ready(function() {
         // if ()
       }
     }
-    if($(".btn").click() === answer[i].answerIndex) {
-        score++;
-    }
+
   });
+
+  $("#buttonContainer").on("click", ".bBallBtn", function (event) {
+      console.log(event.target);
+      //user clicks button
+        //need a way to tell what button user clicked on
+            //get data off button to run some code
+        var buttonIndex = $(this).attr('data-index');
+
+        buttonIndex = parsetInt(buttonIndex);
+        
+  })
 
   //slides
   //need to have an on click function for the answer that the user chooses on each slide
