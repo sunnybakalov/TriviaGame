@@ -5,10 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- jQuery -->
-    <script
-    src="https://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <!-- Bootstrap -->
     <link
       rel="stylesheet"
@@ -33,11 +30,14 @@
         </div>
         <button type="button" class="btn btn-danger btn-lg btn-block" id="startBtn">Start Game</button>
         <div class="row-12 justify-content-center text-danger"><span id="timer"></span></div>
-        <div class="row-12 justify-content-center text-danger"><span id="question"><h2>This is just a sample question.</h2></span></div>
-        <div class="row-12"><button type="button" class="btn btn-danger btn-lg btn-block" id="answer1">sample</button></div>
-        <div class="row-12"><button type="button" class="btn btn-danger btn-lg btn-block" id="answer2">sample</button></div>
-        <div class="row-12"><button type="button" class="btn btn-danger btn-lg btn-block" id="answer3">sample</button></div>
-        <div class="row-12"><button type="button" class="btn btn-danger btn-lg btn-block" id="answer4">sample</button></div>
+        <div id="buttonContainer">
+            <div class="row-12 justify-content-center text-danger"><span id="question"><h2>This is just a sample question.</h2></span></div>
+            <div class="row-12"><button type="button" class="btn btn-danger btn-lg btn-block bBallBtn" id="answer1" data-index="0">sample</button></div>
+            <div class="row-12"><button type="button" class="btn btn-danger btn-lg btn-block bBallBtn" id="answer2" data-index="1">sample</button></div>
+            <div class="row-12"><button type="button" class="btn btn-danger btn-lg btn-block bBallBtn" id="answer3" data-index="2">sample</button></div>
+            <div class="row-12"><button type="button" class="btn btn-danger btn-lg btn-block bBallBtn" id="answer4" data-index="3">sample</button></div>
+
+        </div>
         <div class="row-12"><span></span></div>
     </div>
 
