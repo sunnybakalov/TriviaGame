@@ -13,11 +13,17 @@ h1,
     align-content: center;
 }
 
+h1 {
+    font-family: 'Bangers', cursive;
+    font-size: 450%;
+}
+
 #timer,
 #question,
 button {
     margin-top: 25px;
     margin-bottom: 25px;
+    font-family: 'Aldrich', sans-serif;
 }
 
 .container { 
