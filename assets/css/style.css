@@ -63,9 +63,19 @@ button {
 #timer,
 #question {
     margin-left: 14rem;
+    color: white;
 }
 
-/* #btn {
-    display: flex;
-    justify-items: space-around;
-} */
+#timer {
+    margin-left: 27rem;
+    font-size: 150%;
+    border: 1px solid white;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+#question {
+    font-weight: bolder;
+    font-size: 125%;
+    width: 60%;
+}

@@ -112,6 +112,8 @@ $(document).ready(function() {
   var choice2 = $("#answer2");
   var choice3 = $("#answer3");
   var choice4 = $("#answer4");
+  var result1 = $("#result1");
+  var result2 = $("#result2");
 
   //start button
   var startBtn = $("#startBtn");
