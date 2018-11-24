@@ -189,7 +189,7 @@ $(document).ready(function() {
 
       if (seconds >= 1) {
         console.log("the game is still going");
-        // if ()
+        
       }
     }
 
@@ -203,7 +203,29 @@ $(document).ready(function() {
         var buttonIndex = $(this).attr('data-index');
 
         buttonIndex = parsetInt(buttonIndex);
-        
+            //get data index value so we can compare that to the answerIndex in the array to check if the user's guess is correct
+                //number keeps track of what question the user is on
+                //we can use the number to get the right question & list of answer choices
+                //check if the data-index === answerIndex
+
+                console.log(answer[0].answerIndex);
+                if (buttonIndex === answer[0].answerIndex) {
+                    //show some html to the screen to let the user know they got the answer right
+                    //display results
+                    //user gets new question
+                    //stop timer
+                    stop();
+                    score++;
+                    ++number
+                    if (number === answer.length) {
+                        console.log("Out of questions");
+                    } else {
+                        setTimeout(function(){
+                            populate();
+                            run();
+                        }, 3000);
+                    }
+                }
   })
 
   //slides
