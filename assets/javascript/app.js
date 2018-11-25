@@ -114,6 +114,7 @@ $(document).ready(function() {
   var choice4 = $("#answer4");
   var result1 = $("#result1");
   var result2 = $("#result2");
+  var result3 = $("#result3");
 
   //start button
   var startBtn = $("#startBtn");
@@ -140,7 +141,7 @@ $(document).ready(function() {
     $("#timer").html(seconds + " seconds remaining");
     if (seconds <= 0) {
       stop();
-      alert("time is up!");
+      alert("Time is up!");
       wrong++;
       ++number;
       //THIS IS WHERE THE CORRECT ANSWER NEEDS TO BE DISPLAYED
@@ -163,6 +164,9 @@ $(document).ready(function() {
     choice2.hide();
     choice3.hide();
     choice4.hide();
+    // result1.text();
+    // result2.text();
+    // result3.text();
   }
 
   //the function that populates the current question and the answer choices on the screen
@@ -173,11 +177,19 @@ $(document).ready(function() {
     choice2.text(answer[number].choices[1]);
     choice3.text(answer[number].choices[2]);
     choice4.text(answer[number].choices[3]);
+    timer.show();
+    question.show();
+    choice1.show();
+    choice2.show();
+    choice3.show();
+    choice4.show();
+    // result1.hide();
+    // result2.hide();
+    // result3.hide();
   }
 
   //function that starts the game when you click the Start Button
   $("#startBtn").click(function() {
-    console.log("yo");
     if (isGameStarted === false) {
       isGameStarted = true;
       timer.show();
@@ -188,7 +200,6 @@ $(document).ready(function() {
       choice4.show();
       startBtn.hide();
       run();
-      // decrement();
       populate();
 
       if (seconds >= 1) {
@@ -223,25 +234,35 @@ $(document).ready(function() {
       stop();
       score++;
       ++number;
+      alert("Correct!");
       if (number === answer.length) {
         console.log("out of questions");
         console.log(number);
         console.log(wrong);
         console.log(score);
+        // displayResult();
       } else {
         setTimeout(function() {
           populate();
-          //startTimer
           run();
         }, 1000);
+        console.log(number);
+        console.log(wrong);
+        console.log(score);
       }
-
-      console.log("yo right answer");
+    //   result1.text("Correct!");
+    //   result2.text(answer[number].choices[answer[number].answerIndex]);
+    //   result3.text();
+      populate();
+      console.log("Correct!!");
+      console.log(answer[number].choices[answer[number].answerIndex]);
     } else {
-      console.log("crap wrong answer");
+      console.log("Wrong answer!!");
       stop();
       wrong++;
       ++number;
+      alert("Wrong!");
+    //   displayResult();
       if (number >= answer.length) {
       } else {
         setTimeout(function() {

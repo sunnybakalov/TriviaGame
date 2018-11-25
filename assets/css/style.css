@@ -4,6 +4,7 @@ body {
     padding-top: 3rem;
     background-repeat: no-repeat;
     background-size: cover;
+    width: 100vw;
 }
 
 h1,
@@ -50,6 +51,15 @@ button {
     width: 12rem;
     height: 5rem;
     font-size: 26px;
+    margin-top: 13rem;
+}
+
+#result1,
+#result2,
+#result3 {
+    margin: auto;
+    font-size: 26px;
+    font-family: 'Bangers', cursive;
     margin-top: 13rem;
 }
 
