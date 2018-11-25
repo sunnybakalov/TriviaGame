@@ -58,9 +58,11 @@ button {
 #result2,
 #result3 {
     margin: auto;
-    font-size: 26px;
+    font-size: 40px;
     font-family: 'Bangers', cursive;
+    color: white;
     margin-top: 13rem;
+    margin-left: 25rem;
 }
 
 .btn {

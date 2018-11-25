@@ -164,9 +164,14 @@ $(document).ready(function() {
     choice2.hide();
     choice3.hide();
     choice4.hide();
-    // result1.text();
-    // result2.text();
-    // result3.text();
+    result1.text("Game Over");
+    result2.text("You got " + score + " out of" + number + " correct!");
+    if (score <= 5) {
+        result3.text("Better luck next time!");
+    } else {
+        result3.text("Good Job!");
+    }
+    
   }
 
   //the function that populates the current question and the answer choices on the screen
@@ -235,6 +240,8 @@ $(document).ready(function() {
       score++;
       ++number;
       alert("Correct!");
+      
+      //this if/else is reapeted again a few lines down.
       if (number === answer.length) {
         console.log("out of questions");
         console.log(number);
@@ -265,6 +272,25 @@ $(document).ready(function() {
       ++number;
       alert("Wrong!");
     //   displayResult();
+        //this is the same if/else as line 245 up above. I could not get the last slide to work unless i repeated this code.
+    if (number === answer.length) {
+        console.log("out of questions");
+        console.log(number);
+        console.log(wrong);
+        console.log(score);
+        //the function that hides everything after the last slide
+        displayResult();
+        // displayResult();
+      } else {
+        setTimeout(function() {
+          populate();
+          run();
+        }, 1000);
+        console.log(number);
+        console.log(wrong);
+        console.log(score);
+      }
+
       if (number >= answer.length) {
       } else {
         setTimeout(function() {
