@@ -240,6 +240,8 @@ $(document).ready(function() {
         console.log(number);
         console.log(wrong);
         console.log(score);
+        //the function that hides everything after the last slide
+        displayResult();
         // displayResult();
       } else {
         setTimeout(function() {
