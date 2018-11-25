@@ -226,7 +226,7 @@ $(document).ready(function() {
     //we canuse the number to get the right question
     //check if the data-index === answerIndex
     console.log(answer[0].answerIndex);
-    if (buttonIndex === answer[number].answerIndex) {
+    if (buttonIndex === answer[number].answerIndex) { 
       //show some html to the screen to show them they got the answer right
       //display results
       //user gets new question
