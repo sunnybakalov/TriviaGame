@@ -175,7 +175,6 @@ $(document).ready(function() {
   }
 
   //the function that populates the current question and the answer choices on the screen
-
   function populate() {
     question.text(answer[number].question);
     choice1.text(answer[number].choices[0]);
