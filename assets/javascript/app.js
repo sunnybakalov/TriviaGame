@@ -130,7 +130,7 @@ $(document).ready(function() {
     seconds = 21;
     clearInterval(intervalId);
     intervalId = setInterval(decrement, 1000);
-  }
+  };
 
   //the function that counts down
   function decrement() {
@@ -147,13 +147,13 @@ $(document).ready(function() {
       //startTimer
       run();
     }
-  }
+  };
 
   //the stop function that clears our intervalId
   function stop() {
     seconds = 21;
     clearInterval(intervalId);
-  }
+  };
 
   function displayResult() {
     timer.hide();
@@ -162,6 +162,9 @@ $(document).ready(function() {
     choice2.hide();
     choice3.hide();
     choice4.hide();
+  };
+
+  function endGame() {
     result1.text("Game Over");
     result2.text("You got " + score + " out of" + number + " correct!");
     if (score <= 5) {
@@ -169,7 +172,7 @@ $(document).ready(function() {
     } else {
       result3.text("Good Job!");
     }
-  }
+  };
 
   //the function that populates the current question and the answer choices on the screen
   function populate() {
@@ -187,7 +190,7 @@ $(document).ready(function() {
     // result1.hide();
     // result2.hide();
     // result3.hide();
-  }
+  };
 
   function isGameStillGoing() {
     if (number === answer.length) {
@@ -197,6 +200,7 @@ $(document).ready(function() {
       console.log(score);
       //the function that hides everything after the last slide
       displayResult();
+      endGame();
     } else {
       setTimeout(function() {
         populate();
@@ -250,7 +254,7 @@ $(document).ready(function() {
       //stop timer
       stop();
       score++;
-      ++number;
+      number++;
       alert("Correct!");
 
       isGameStillGoing();
@@ -264,7 +268,7 @@ $(document).ready(function() {
       console.log("Wrong answer!!");
       stop();
       wrong++;
-      ++number;
+      number++;
       alert("Wrong!");
       isGameStillGoing();
 
