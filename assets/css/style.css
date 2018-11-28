@@ -61,8 +61,11 @@ button {
     font-size: 40px;
     font-family: 'Bangers', cursive;
     color: white;
-    margin-top: 13rem;
     margin-left: 25rem;
+}
+
+.results {
+    margin-top: 9rem;
 }
 
 .btn {

@@ -166,9 +166,11 @@ $(document).ready(function() {
 
   function endGame() {
     result1.text("Game Over");
-    result2.text("You got " + score + " out of" + number + " correct!");
-    if (score <= 5) {
+    result2.text("You got " + score + " out of " + number + " correct!");
+    if (score < 4) {
       result3.text("Better luck next time!");
+    } else if (score = 4 || 5) {
+      result3.text("Not bad! Try again!");
     } else {
       result3.text("Good Job!");
     }
