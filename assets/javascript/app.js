@@ -139,13 +139,19 @@ $(document).ready(function() {
     $("#timer").html(seconds + " seconds remaining");
     if (seconds <= 0) {
       stop();
-      alert("Time is up!");
+    //   alert("Time is up!");
       wrong++;
-      ++number;
-      //THIS IS WHERE THE CORRECT ANSWER NEEDS TO BE DISPLAYED
-      populate();
-      //startTimer
-      run();
+      number++;
+      hideStuff();
+
+      setTimeout(function() {
+        populate();
+        run();
+      }, 4000);
+    //   //THIS IS WHERE THE CORRECT ANSWER NEEDS TO BE DISPLAYED
+    //   populate();
+    //   //startTimer
+    //   run();
     }
   };
 
@@ -155,7 +161,8 @@ $(document).ready(function() {
     clearInterval(intervalId);
   };
 
-  function displayResult() {
+  //this function hides the timer, question, and answer choices.
+  function hideStuff() {
     timer.hide();
     question.hide();
     choice1.hide();
@@ -164,6 +171,18 @@ $(document).ready(function() {
     choice4.hide();
   };
 
+  //this function reveals if the user's choice was correct after each question
+  function displayResult() {
+      if (buttonIndex === answer[number].answerIndex) {
+        result1.text("Correct!");
+        result2.text("The correct answer is " + answer[number].choices[answer[number].answerIndex]);
+      } else {
+        result1.text("Wrong!")
+        result2.text("The correct answer is " + answer[number].choices[answer[number].answerIndex]);
+      }
+  };
+
+  //this function is displayed at the end of the game and shows the user's results.
   function endGame() {
     result1.text("Game Over");
     result2.text("You got " + score + " out of " + number + " correct!");
@@ -201,7 +220,7 @@ $(document).ready(function() {
       console.log(wrong);
       console.log(score);
       //the function that hides everything after the last slide
-      displayResult();
+      hideStuff();
       endGame();
     } else {
       setTimeout(function() {
