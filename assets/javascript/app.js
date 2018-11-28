@@ -192,6 +192,25 @@ $(document).ready(function() {
     // result3.hide();
   }
 
+  function isGameStillGoing(){
+    if (number === answer.length) {
+        console.log("out of questions");
+        console.log(number);
+        console.log(wrong);
+        console.log(score);
+        //the function that hides everything after the last slide
+        displayResult();
+      } else {
+        setTimeout(function() {
+          populate();
+          run();
+        }, 1000);
+        console.log(number);
+        console.log(wrong);
+        console.log(score);
+      }
+  };
+
   //function that starts the game when you click the Start Button
   $("#startBtn").click(function() {
     if (isGameStarted === false) {
@@ -208,13 +227,10 @@ $(document).ready(function() {
 
       if (seconds >= 1) {
         console.log("the game is still going");
-        // if ()
       }
     }
   });
-  // if($(".btn").click() === answer[i].answerIndex) {
-  //     score++;
-  // }
+
   $("#buttonContainer").on("click", ".bBallBtn", function(event) {
     console.log(event.target);
     //user clicks button
@@ -240,24 +256,8 @@ $(document).ready(function() {
       ++number;
       alert("Correct!");
       
-      //this if/else is reapeted again a few lines down.
-      if (number === answer.length) {
-        console.log("out of questions");
-        console.log(number);
-        console.log(wrong);
-        console.log(score);
-        //the function that hides everything after the last slide
-        displayResult();
-        // displayResult();
-      } else {
-        setTimeout(function() {
-          populate();
-          run();
-        }, 1000);
-        console.log(number);
-        console.log(wrong);
-        console.log(score);
-      }
+    
+      isGameStillGoing()
     //   result1.text("Correct!");
     //   result2.text(answer[number].choices[answer[number].answerIndex]);
     //   result3.text();
@@ -270,25 +270,7 @@ $(document).ready(function() {
       wrong++;
       ++number;
       alert("Wrong!");
-    //   displayResult();
-        //this is the same if/else as line 245 up above. I could not get the last slide to work unless i repeated this code.
-    if (number === answer.length) {
-        console.log("out of questions");
-        console.log(number);
-        console.log(wrong);
-        console.log(score);
-        //the function that hides everything after the last slide
-        displayResult();
-        // displayResult();
-      } else {
-        setTimeout(function() {
-          populate();
-          run();
-        }, 1000);
-        console.log(number);
-        console.log(wrong);
-        console.log(score);
-      }
+      isGameStillGoing()
 
       if (number >= answer.length) {
       } else {
