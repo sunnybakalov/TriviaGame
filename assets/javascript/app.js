@@ -115,8 +115,6 @@ $(document).ready(function() {
   var result1 = $("#result1");
   var result2 = $("#result2");
   var result3 = $("#result3");
-
-  //start button
   var startBtn = $("#startBtn");
 
   //variable that will hold our interval ID when we execute
@@ -167,11 +165,10 @@ $(document).ready(function() {
     result1.text("Game Over");
     result2.text("You got " + score + " out of" + number + " correct!");
     if (score <= 5) {
-        result3.text("Better luck next time!");
+      result3.text("Better luck next time!");
     } else {
-        result3.text("Good Job!");
+      result3.text("Good Job!");
     }
-    
   }
 
   //the function that populates the current question and the answer choices on the screen
@@ -192,24 +189,24 @@ $(document).ready(function() {
     // result3.hide();
   }
 
-  function isGameStillGoing(){
+  function isGameStillGoing() {
     if (number === answer.length) {
-        console.log("out of questions");
-        console.log(number);
-        console.log(wrong);
-        console.log(score);
-        //the function that hides everything after the last slide
-        displayResult();
-      } else {
-        setTimeout(function() {
-          populate();
-          run();
-        }, 1000);
-        console.log(number);
-        console.log(wrong);
-        console.log(score);
-      }
-  };
+      console.log("out of questions");
+      console.log(number);
+      console.log(wrong);
+      console.log(score);
+      //the function that hides everything after the last slide
+      displayResult();
+    } else {
+      setTimeout(function() {
+        populate();
+        run();
+      }, 4000);
+      console.log(number);
+      console.log(wrong);
+      console.log(score);
+    }
+  }
 
   //function that starts the game when you click the Start Button
   $("#startBtn").click(function() {
@@ -234,7 +231,7 @@ $(document).ready(function() {
   $("#buttonContainer").on("click", ".bBallBtn", function(event) {
     console.log(event.target);
     //user clicks button
-    //needa way tell what button user clicked on
+    //need a way to tell what button user clicked on
     //get data off button to run some code
     var buttonIndex = $(this).attr("data-index");
 
@@ -246,7 +243,7 @@ $(document).ready(function() {
     //we canuse the number to get the right question
     //check if the data-index === answerIndex
     console.log(answer[0].answerIndex);
-    if (buttonIndex === answer[number].answerIndex) { 
+    if (buttonIndex === answer[number].answerIndex) {
       //show some html to the screen to show them they got the answer right
       //display results
       //user gets new question
@@ -255,12 +252,11 @@ $(document).ready(function() {
       score++;
       ++number;
       alert("Correct!");
-      
-    
-      isGameStillGoing()
-    //   result1.text("Correct!");
-    //   result2.text(answer[number].choices[answer[number].answerIndex]);
-    //   result3.text();
+
+      isGameStillGoing();
+      //   result1.text("Correct!");
+      //   result2.text(answer[number].choices[answer[number].answerIndex]);
+      //   result3.text();
       populate();
       console.log("Correct!!");
       console.log(answer[number].choices[answer[number].answerIndex]);
@@ -270,7 +266,7 @@ $(document).ready(function() {
       wrong++;
       ++number;
       alert("Wrong!");
-      isGameStillGoing()
+      isGameStillGoing();
 
       if (number >= answer.length) {
       } else {
