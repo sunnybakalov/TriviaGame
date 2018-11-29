@@ -143,11 +143,12 @@ $(document).ready(function() {
       wrong++;
       number++;
       hideStuff();
-
+        
       setTimeout(function() {
         populate();
         run();
       }, 4000);
+      
     //   //THIS IS WHERE THE CORRECT ANSWER NEEDS TO BE DISPLAYED
     //   populate();
     //   //startTimer
@@ -231,7 +232,7 @@ $(document).ready(function() {
       console.log(wrong);
       console.log(score);
     }
-  }
+  };
 
   //function that starts the game when you click the Start Button
   $("#startBtn").click(function() {
