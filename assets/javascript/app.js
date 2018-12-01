@@ -145,7 +145,6 @@ $(document).ready(function() {
         number++;
         populate();
         run();
-        isGameStillGoing();
       }, 4000);
       
     //   //THIS IS WHERE THE CORRECT ANSWER NEEDS TO BE DISPLAYED
