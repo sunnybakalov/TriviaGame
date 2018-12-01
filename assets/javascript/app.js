@@ -98,13 +98,10 @@ $(document).ready(function() {
 
   //variable for beginning score
   var score = 0;
-
   //variable for wrong guesses
   var wrong = 0;
-
   //variable that keeps track of the question we are on. it increments by 1 with each turn.
   var number = 0;
-
   //variables
   var timer = $("#timer");
   var question = $("#question");
