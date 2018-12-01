@@ -136,7 +136,6 @@ $(document).ready(function() {
     $("#timer").html(seconds + " seconds remaining");
     if (seconds <= 0) {
       stop();
-    //   alert("Time is up!");
       wrong++;
       hideStuff();
         result1.text("Time's up!");
@@ -147,10 +146,6 @@ $(document).ready(function() {
         run();
       }, 4000);
       
-    //   //THIS IS WHERE THE CORRECT ANSWER NEEDS TO BE DISPLAYED
-    //   populate();
-    //   //startTimer
-    //   run();
     }
   };
 
@@ -185,12 +180,10 @@ $(document).ready(function() {
   function endGame() {
     result1.text("Game Over");
     result2.text("You got " + score + " out of " + number + " correct!");
-    if (score < 4) {
-      result3.text("Better luck next time!");
-    } else if (score = 4 || 5) {
-      result3.text("Not bad! Try again!");
-    } else {
+    if (score >= 5) {
       result3.text("Good Job!");
+    } else {
+      result3.text("Good effort! Try again!");
     }
   };
 
@@ -245,10 +238,6 @@ $(document).ready(function() {
       startBtn.hide();
       run();
       populate();
-
-      if (seconds >= 1) {
-        console.log("the game is still going");
-      }
     }
   });
 
@@ -268,7 +257,7 @@ $(document).ready(function() {
     //check if the data-index === answerIndex
     console.log(answer[0].answerIndex);
     if (buttonIndex === answer[number].answerIndex) {
-      //show some html to the screen to show them they got the answer right
+      //show some html to the screen to show the user that they got the answer right
       //display results
       //user gets new question
       //stop timer
@@ -278,9 +267,6 @@ $(document).ready(function() {
       alert("Correct!");
 
       isGameStillGoing();
-      //   result1.text("Correct!");
-      //   result2.text(answer[number].choices[answer[number].answerIndex]);
-      //   result3.text();
       populate();
       console.log("Correct!!");
       console.log(answer[number].choices[answer[number].answerIndex]);
