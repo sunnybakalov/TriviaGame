@@ -139,7 +139,7 @@ $(document).ready(function() {
       wrong++;
       hideStuff();
         result1.text("Time's up!");
-        result2.text("The correct answer is: " + answer[number].choices[answer[number].answerIndex]);
+        result2.text("The correct answer is: ");
         result3.text(answer[number].choices[answer[number].answerIndex]);
       setTimeout(function() {
         number++;
@@ -167,24 +167,27 @@ $(document).ready(function() {
   };
 
   //this function reveals if the user's choice was correct after each question
-  function displayResult() {
-      if (buttonIndex === answer[number].answerIndex) {
-        result1.text("Correct!");
-        result2.text("The correct answer is: " + answer[number].choices[answer[number].answerIndex]);
-      } else {
-        result1.text("Wrong!")
-        result2.text("The correct answer is: " + answer[number].choices[answer[number].answerIndex]);
-      }
-  };
+//   function displayResult() {
+//       if (buttonIndex === answer[number].answerIndex) {
+//         result1.text("Correct!");
+//         result2.text("The correct answer is: " + answer[number].choices[answer[number].answerIndex]);
+//       } else {
+//         result1.text("Wrong!")
+//         result2.text("The correct answer is: " + answer[number].choices[answer[number].answerIndex]);
+//       }
+//       setTimeout(function() {
+//         endGame();
+//       }, 4000);
+//   };
 
   //this function is displayed at the end of the game and shows the user's results.
   function endGame() {
-    result1.text("Game Over");
-    result2.text("You got " + score + " out of " + number + " correct!");
+    result1.html("Game Over");
+    result2.html("You got " + score + " out of " + number + " correct!");
     if (score >= 5) {
-      result3.text("Good Job!");
+      result3.html("Good Job!");
     } else {
-      result3.text("Good effort! Try again!");
+      result3.html("Good effort! Try again!");
     }
   };
 
