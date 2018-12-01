@@ -265,9 +265,7 @@ $(document).ready(function() {
       score++;
       number++;
       alert("Correct!");
-
       isGameStillGoing();
-      populate();
       console.log("Correct!!");
       console.log(answer[number].choices[answer[number].answerIndex]);
     } else {
@@ -278,14 +276,14 @@ $(document).ready(function() {
       alert("Wrong!");
       isGameStillGoing();
 
-      if (number >= answer.length) {
-      } else {
-        setTimeout(function() {
-          populate();
-          //startTimer
-          run();
-        }, 1000);
-      }
+    //   if (number >= answer.length) {
+    //   } else {
+    //     setTimeout(function() {
+    //       populate();
+    //       //startTimer
+    //       run();
+    //     }, 1000);
+    //   }
     }
   });
 });
