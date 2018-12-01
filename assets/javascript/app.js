@@ -118,13 +118,13 @@ $(document).ready(function() {
   var intervalId;
 
   //timer seconds variable.
-  var seconds = 21;
+  var seconds = 15;
 
   var isGameStarted = false;
 
   //the function that clears the intervalId and keeps the timer running
   function run() {
-    seconds = 21;
+    seconds = 15;
     clearInterval(intervalId);
     intervalId = setInterval(decrement, 1000);
   };
@@ -152,7 +152,7 @@ $(document).ready(function() {
 
   //the stop function that clears our intervalId
   function stop() {
-    seconds = 16;
+    seconds = 15;
     clearInterval(intervalId);
   };
 
@@ -201,9 +201,9 @@ $(document).ready(function() {
     choice2.show();
     choice3.show();
     choice4.show();
-    // result1.hide();
-    //     result2.hide();
-    //         result3.hide();
+    result1.empty();
+        result2.empty();
+            result3.empty();
   };
 
   function isGameStillGoing() {
@@ -213,6 +213,7 @@ $(document).ready(function() {
       console.log(wrong);
       console.log(score);
       hideStuff();
+    //   displayResult();
       endGame();
     } else {
       setTimeout(function() {
