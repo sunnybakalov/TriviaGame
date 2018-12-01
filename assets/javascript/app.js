@@ -122,7 +122,7 @@ $(document).ready(function() {
 
   var isGameStarted = false;
 
-  //the function that keeps the timer running
+  //the function that clears the intervalId and keeps the timer running
   function run() {
     seconds = 21;
     clearInterval(intervalId);
@@ -140,6 +140,7 @@ $(document).ready(function() {
       hideStuff();
         result1.text("Time's up!");
         result2.text("The correct answer is: " + answer[number].choices[answer[number].answerIndex]);
+        result3.text(answer[number].choices[answer[number].answerIndex]);
       setTimeout(function() {
         number++;
         populate();
@@ -151,7 +152,7 @@ $(document).ready(function() {
 
   //the stop function that clears our intervalId
   function stop() {
-    seconds = 21;
+    seconds = 16;
     clearInterval(intervalId);
   };
 
@@ -200,6 +201,9 @@ $(document).ready(function() {
     choice2.show();
     choice3.show();
     choice4.show();
+    // result1.hide();
+    //     result2.hide();
+    //         result3.hide();
   };
 
   function isGameStillGoing() {
@@ -208,7 +212,6 @@ $(document).ready(function() {
       console.log(number);
       console.log(wrong);
       console.log(score);
-      //the function that hides everything after the last slide
       hideStuff();
       endGame();
     } else {
@@ -258,17 +261,23 @@ $(document).ready(function() {
       //stop timer
       stop();
       score++;
+      hideStuff();
+        result1.text("Correct!");
+        result2.text("The correct answer is: ");
+        result3.text(answer[number].choices[answer[number].answerIndex]);
       console.log("Correct!!");
       console.log(answer[number].choices[answer[number].answerIndex]);
       number++;
-      alert("Correct!");
       isGameStillGoing();
     } else {
       console.log("Wrong answer!!");
       stop();
       wrong++;
+      hideStuff();
+        result1.text("Wrong!");
+        result2.text("The correct answer is: ");
+        result3.text(answer[number].choices[answer[number].answerIndex]);
       number++;
-      alert("Wrong!");
       isGameStillGoing();
     }
   });
