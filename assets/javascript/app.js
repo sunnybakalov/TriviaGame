@@ -138,12 +138,14 @@ $(document).ready(function() {
       stop();
     //   alert("Time is up!");
       wrong++;
-      number++;
       hideStuff();
-        
+        result1.text("Time's up!");
+        result2.text("The correct answer is: " + answer[number].choices[answer[number].answerIndex]);
       setTimeout(function() {
+        number++;
         populate();
         run();
+        isGameStillGoing();
       }, 4000);
       
     //   //THIS IS WHERE THE CORRECT ANSWER NEEDS TO BE DISPLAYED
@@ -173,10 +175,10 @@ $(document).ready(function() {
   function displayResult() {
       if (buttonIndex === answer[number].answerIndex) {
         result1.text("Correct!");
-        result2.text("The correct answer is " + answer[number].choices[answer[number].answerIndex]);
+        result2.text("The correct answer is: " + answer[number].choices[answer[number].answerIndex]);
       } else {
         result1.text("Wrong!")
-        result2.text("The correct answer is " + answer[number].choices[answer[number].answerIndex]);
+        result2.text("The correct answer is: " + answer[number].choices[answer[number].answerIndex]);
       }
   };
 
