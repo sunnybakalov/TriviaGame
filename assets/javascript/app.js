@@ -145,7 +145,7 @@ $(document).ready(function() {
         number++;
         populate();
         run();
-      }, 4000);
+      }, 3000);
       
     }
   };
@@ -182,13 +182,24 @@ $(document).ready(function() {
 
   //this function is displayed at the end of the game and shows the user's results.
   function endGame() {
+      isGameStarted = false;
+      number = 0;
     result1.html("Game Over");
-    result2.html("You got " + score + " out of " + number + " correct!");
+    result2.html("You got " + score + " out of 10 correct!");
     if (score >= 5) {
       result3.html("Good Job!");
     } else {
       result3.html("Good effort! Try again!");
     }
+    setTimeout(function() {
+        result1.empty();
+        result2.empty();
+        result3.empty();
+        question.text("Play again?");
+        startBtn.show();
+        wrong = 0;
+        score = 0;
+      }, 5000);
   };
 
   //the function that populates the current question and the answer choices on the screen
@@ -216,13 +227,12 @@ $(document).ready(function() {
       console.log(wrong);
       console.log(score);
       hideStuff();
-    //   displayResult();
       endGame();
     } else {
       setTimeout(function() {
         populate();
         run();
-      }, 4000);
+      }, 3000);
       console.log(number);
       console.log(wrong);
       console.log(score);
