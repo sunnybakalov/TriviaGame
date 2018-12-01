@@ -129,11 +129,11 @@ $(document).ready(function() {
     intervalId = setInterval(decrement, 1000);
   };
 
-  //the function that counts down
+  //the function that counts down and checks if the user ran out of time
   function decrement() {
-    //decrease timer by 1
-    --seconds;
     $("#timer").html(seconds + " seconds remaining");
+    --seconds;
+    //this is where we check if the user ran out of time
     if (seconds <= 0) {
       stop();
       wrong++;
@@ -200,9 +200,6 @@ $(document).ready(function() {
     choice2.show();
     choice3.show();
     choice4.show();
-    // result1.hide();
-    // result2.hide();
-    // result3.hide();
   };
 
   function isGameStillGoing() {
@@ -241,21 +238,19 @@ $(document).ready(function() {
     }
   });
 
+  //user clicks button
   $("#buttonContainer").on("click", ".bBallBtn", function(event) {
     console.log(event.target);
-    //user clicks button
-    //need a way to tell what button user clicked on
-    //get data off button to run some code
+
+    //this is how we tell what button the user clicked on
     var buttonIndex = $(this).attr("data-index");
 
     console.log(parseInt(buttonIndex));
-
     buttonIndex = parseInt(buttonIndex);
-    //get data index value so we can have that as an index to see if they get right answer
+    //get data index value so we can have that as an index to see if the user got right answer
     //number keeps track of what question the user is on
-    //we canuse the number to get the right question
+    //we can use the number to get the right question
     //check if the data-index === answerIndex
-    console.log(answer[0].answerIndex);
     if (buttonIndex === answer[number].answerIndex) {
       //show some html to the screen to show the user that they got the answer right
       //display results
@@ -263,11 +258,11 @@ $(document).ready(function() {
       //stop timer
       stop();
       score++;
+      console.log("Correct!!");
+      console.log(answer[number].choices[answer[number].answerIndex]);
       number++;
       alert("Correct!");
       isGameStillGoing();
-      console.log("Correct!!");
-      console.log(answer[number].choices[answer[number].answerIndex]);
     } else {
       console.log("Wrong answer!!");
       stop();
@@ -275,15 +270,6 @@ $(document).ready(function() {
       number++;
       alert("Wrong!");
       isGameStillGoing();
-
-    //   if (number >= answer.length) {
-    //   } else {
-    //     setTimeout(function() {
-    //       populate();
-    //       //startTimer
-    //       run();
-    //     }, 1000);
-    //   }
     }
   });
 });
